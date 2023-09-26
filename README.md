@@ -68,7 +68,7 @@ This container downloads and installs the following dependencies:
 The container creates a working directory named PiQTtree2 in the root directory of the container.  The `entrypoint.sh` script is run on start up, which checks to see if you passed a named variable `SSH_PRIVATE_KEY` in when you built the container.  If you do, it copies the SSH private key into the container and sets the permissions on the file to 600.  This allows you to push and pull from your fork of the PiQTtree2 repository from inside the container.
 
 </details>
-<details open><summary><strong>Building the PiQTree2 Docker Image</strong></summary>
+<details><summary><strong>Building the PiQTree2 Docker Image</strong></summary>
 
 To build the Docker image clone this PiQTree2dev repository to a directory on your local machine (eg:/source/PiQTree2dev) so the docker build command can find teh `DockerFile` and `entrypoint.sh` script.  Then navigate to the root of your local clone of the PiQTtree2 repository and run the following command to build a docker image named `PiQTtree2dev` using the Dockerfile in this repository 
 
