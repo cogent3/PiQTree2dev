@@ -30,7 +30,7 @@ Alternatively, on macOS, you can use Colima which is a lightweight Docker-compat
     colima status
     ```
 
-Now you can use Docker commands as you normally would, and Colima will handle the container runtime on macOS.
+Now you can use docker commands as you normally would, and Colima will handle the container runtime on macOS.
 
 </details>
 
@@ -44,7 +44,7 @@ The container will mount a local directory that you have clones the PiQTree2 rep
 
 This allows you to edit files on your host machine using your favorite editor, and build and run the project inside the container.  The container will also mount your SSH private key into the container if you have one set up on your host machine.  This allows you to push and pull from your fork of the PiQTtree2 repository from inside the container.
 
-<details><summary><strong>PiQTree2 Docker Image Contents</strong></summary>
+<details><summary><strong>PiQTree2 docker image contents</strong></summary>
 This container downloads and installs the following dependencies:
 
 - Eigen library: Used for linear algebra.
@@ -68,7 +68,7 @@ This container downloads and installs the following dependencies:
 The container creates a working directory named PiQTtree2 in the root directory of the container.  The `entrypoint.sh` script is run on start up, which checks to see if you passed a named variable `SSH_PRIVATE_KEY` in when you built the container.  If you do, it copies the SSH private key into the container and sets the permissions on the file to 600.  This allows you to push and pull from your fork of the PiQTtree2 repository from inside the container.
 
 </details>
-<details><summary><strong>Building the PiQTree2 Docker Image</strong></summary>
+<details><summary><strong>Building the PiQTree2 docker image</strong></summary>
 
 To build the Docker image clone this PiQTree2dev repository to a directory on your local machine (eg:/source/PiQTree2dev) so the docker build command can find teh `DockerFile` and `entrypoint.sh` script.  Then navigate to the root of your local clone of the PiQTtree2 repository and run the following command to build a docker image named `PiQTtree2dev` using the Dockerfile in this repository 
 
@@ -123,7 +123,7 @@ Then, run the following command to attach to the container:
 
 ---
 </details>
-<details><summary><strong>Stopping the Docker Container</strong></summary>
+<details><summary><strong>Stopping the container</strong></summary>
 In interactive mode simply enter `exit`.
 
 In detached mode use the following command:
@@ -140,9 +140,9 @@ By default containers are given random names, like `flamboyant_badger`.  To expl
 when referring to a container using docker command, you can use either the container ID or the container name.
 
 </details>
-<details><summary><strong>How to configure your SSH keys into the Docker container</strong></summary>
+<details><summary><strong>How to configure your SSH keys into the container</strong></summary>
 
-If you intend to contribute to a private fork of the iqtree2 repository, and you have an SSH private key set up on your host machine, and you have added your public SSH key to your GitHub account (https://github.com/settings/keys), then you can mount your SSH private key into the Docker container so that you can push and pull from your fork from inside the container. To do this, add the following argument to the `docker run` command:
+If you intend to contribute to a private fork of the PiQtree2 repository, and you have an SSH private key set up on your host machine, and you have added your public SSH key to your GitHub account (https://github.com/settings/keys), then you can mount your SSH private key into the Docker container so that you can push and pull from your fork from inside the container. To do this, add the following argument to the `docker run` command:
 
 ### for macOS/Linux
 
@@ -211,9 +211,9 @@ A docker run command for developing in detached mode from VS Code with the abili
 `docker run -it -d -v ${PWD}:/PiQTree2 -v $env:USERPROFILE/.ssh/github:/root/.ssh/id_rsa -p 3000:3000 --name PiQTree2dev PiQTree2dev /bin/bash`
 
 </details>
-<details><summary><strong>Inside the Docker Container</strong></summary>
+<details><summary><strong>Inside the docker container</strong></summary>
 
-Once inside the Docker container, you will be in the `/PiQTree2` directory where you can find the PiQTree2 project files. You can perform git operations, build the project, and run tests as you would in a regular development environment.
+Once inside the docker container, you will be in the `/PiQTree2` directory where you can find the PiQTree2 project files. You can perform git operations, build the project, and run tests as you would in a regular development environment.
 
 To build the project 
 
@@ -226,9 +226,9 @@ cmake ..
 make
 ```
 </details>
-<details><summary><strong>Cleaning Up</strong></summary>
+<details><summary><strong>Cleaning up</strong></summary>
 
-To remove the Docker image you created, first find the image ID using:
+To remove the docker image you created, first find the image ID using:
 
 `docker images`
 
