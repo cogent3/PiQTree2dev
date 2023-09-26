@@ -213,7 +213,7 @@ A docker run command for developing in detached mode from VS Code with the abili
 </details>
 <details><summary><strong>Inside the docker container</strong></summary>
 
-Once inside the docker container, you will be in the `/PiQTree2` directory where you can find the PiQTree2 project files. You can perform git operations, build the project, and run tests as you would in a regular development environment.
+Once inside the docker container, you will be in the `/PiQTree2` directory where you can find the PiQTree2 project files. You can perform git operations, build the project, edit source, and run tests as you would in a regular development environment.
 
 To build the project 
 
@@ -225,6 +225,8 @@ cd build
 cmake ..
 make
 ```
+
+Remember the files in the working directory are mounted from your host OS, so any changes you make to the code in your container will be reflected on your host OS.
 </details>
 <details><summary><strong>Cleaning up</strong></summary>
 
