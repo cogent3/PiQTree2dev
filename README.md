@@ -6,8 +6,9 @@ The easiest way to develop for PiQTree2 is to build in a docker container, which
 
 ### Setting up the docker engine
 
-The docker engine is a hypervisor application that hosts docker containers. On Windows and MacOS, you can install Docker Desktop application from [here](https://www.docker.com/products/docker-desktop) 
+The docker engine is a hypervisor application that hosts docker containers. On Windows and MacOS (and soon Linux), you can install Docker Desktop application from [here](https://www.docker.com/products/docker-desktop) 
 
+#### MacOS alternative to Docker Desktop
 Alternatively, on macOS, you can use Colima which is a lightweight Docker-compatible environment on macOS without the need for a hypervisor.
 
 <details><summary>Installing Colima on macOS</summary>
@@ -30,9 +31,13 @@ Alternatively, on macOS, you can use Colima which is a lightweight Docker-compat
     colima status
     ```
 
+---
+
 Now you can use docker commands as you normally would, and Colima will handle the container runtime on macOS.
 
 </details>
+
+### Linux alternative to Docker Desktop
 
 On Linux, you will need to install the docker engine. 
 
